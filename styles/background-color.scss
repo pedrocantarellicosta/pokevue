@@ -1,0 +1,114 @@
+.text{
+  &-normal{
+    color: $normal;
+  }
+  &-fire{
+    color: $fire;
+  }
+  &-fighting{
+    color: $fighting;
+  }
+  &-water{
+    color: $water;
+  }
+  &-grass{
+    color: $grass;
+  }
+  &-poison{
+    color: $poison;
+  }
+  &-electric{
+    color: $electric;
+  }
+  &-ground{
+    color: $ground;
+  }
+  &-rock{
+    color: $rock;
+  }
+  &-bug{
+    color: $bug;
+  }
+  &-dragon{
+    color: $dragon;
+  }
+  &-ghost{
+    color: $ghost;
+  }
+  &-dark{
+    color: $dark;
+  }
+  &-fairy{
+    color: $fairy;
+  }
+  &-steel{
+    color: $steel;
+  }
+  &-psychic{
+    color: $psychic;
+  }
+  &-ice{
+    color: $ice;
+  }
+  &-flying{
+    color: $flying;
+  }
+}
+.background{
+  &__radial{
+    &-normal{
+      background: radial-gradient(circle, $normal 0%, darken($normal, 30%) 100%);
+    }
+    &-fire{
+      background: radial-gradient(circle, $fire 0%, darken($fire, 30%) 100%);
+    }
+    &-fighting{
+      background: radial-gradient(circle, $fighting 0%, darken($fighting, 30%) 100%);
+    }
+    &-water{
+      background: radial-gradient(circle, $water 0%, darken($water, 30%) 100%);
+    }
+    &-grass{
+      background: radial-gradient(circle, $grass 0%, darken($grass, 30%) 100%);
+    }
+    &-poison{
+      background: radial-gradient(circle, $poison 0%, darken($poison, 30%) 100%);
+    }
+    &-electric{
+      background: radial-gradient(circle, $electric 0%, darken($electric, 30%) 100%);
+    }
+    &-ground{
+      background: radial-gradient(circle, $ground 0%, darken($ground, 30%) 100%);
+    }
+    &-rock{
+      background: radial-gradient(circle, $rock 0%, darken($rock, 30%) 100%);
+    }
+    &-bug{
+      background: radial-gradient(circle, $bug 0%, darken($bug, 30%) 100%);
+    }
+    &-dragon{
+      background: radial-gradient(circle, $dragon 0%, darken($dragon, 30%) 100%);
+    }
+    &-ghost{
+      background: radial-gradient(circle, $ghost 0%, darken($ghost, 30%) 100%);
+    }
+    &-dark{
+      background: radial-gradient(circle, $dark 0%, darken($dark, 30%) 100%);
+    }
+    &-fairy{
+      background: radial-gradient(circle, $fairy 0%, darken($fairy, 30%) 100%);
+    }
+    &-steel{
+      background: radial-gradient(circle, $steel 0%, darken($steel, 30%) 100%);
+    }
+    &-psychic{
+      background: radial-gradient(circle, $psychic 0%, darken($psychic, 30%) 100%);
+    }
+    &-ice{
+      background: radial-gradient(circle, $ice 0%, darken($ice, 30%) 100%);
+    }
+    &-flying{
+      background: radial-gradient(circle, $flying 0%, darken($flying, 30%) 100%);
+    }
+  }
+}
