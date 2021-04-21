@@ -16,6 +16,6 @@ module.exports = {
     "import/prefer-default-export": 0,
     "arrow-body-style": 0,
     "max-len": 0,
-    "vue/no-v-for-template-key-on-child": 0,
+    "default-case": 0,
   },
 };
