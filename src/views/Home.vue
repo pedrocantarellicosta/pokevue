@@ -27,7 +27,7 @@ export default {
   data() {
     return {
       pokemonData: null,
-      selectedNumber: 6,
+      selectedNumber: 1,
       lastPokemonId: 150,
       pokemonRepository: RepositoryFactory.get('pokemon'),
       pokemonSpeciesRepository: RepositoryFactory.get('pokemonSpecies'),
@@ -39,8 +39,10 @@ export default {
     PokemonMobile,
     SelectNumber,
   },
-  created() {
+  async created() {
     window.addEventListener('resize', this.handlerWindowSize);
+    const pokemonId = await localStorage.getItem('pokemon-id');
+    if (pokemonId) this.selectedNumber = pokemonId;
     this.updatePage();
   },
   unmounted() {
@@ -65,6 +67,8 @@ export default {
         default:
           this.selectedNumber = page;
       }
+      console.log(this.selectedNumber);
+      localStorage.setItem('pokemon-id', this.selectedNumber);
     },
 
     async updatePage() {
