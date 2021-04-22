@@ -1,5 +1,5 @@
 <template>
-  <div class="select-number">
+  <div class="select-number" :class="theme">
     <span @click="$emit('previousPage','previous')" >&#60;</span>
     <a
       v-for="paginationTrigger in paginationTriggers"
@@ -17,7 +17,6 @@ export default {
   name: 'select-number',
   data() {
     return {
-      visiblePagesCount: 9,
     };
   },
   props: {
@@ -27,8 +26,17 @@ export default {
     },
     pageCount: {
       type: Number,
-      required: true,
       default: 150,
+    },
+    theme: {
+      type: String,
+      default: 'light',
+    },
+    visiblePagesCount: {
+      type: Number,
+      required: true,
+      default: 8,
+
     },
   },
   components: {
@@ -40,7 +48,7 @@ export default {
       const { currentPage } = this;
       const { pageCount } = this;
       const { visiblePagesCount } = this;
-      const visiblePagesThreshold = (visiblePagesCount - 1) / 2;
+      const visiblePagesThreshold = (visiblePagesCount % 2 === 0 ? visiblePagesCount : visiblePagesCount - 1) / 2;
       const pagintationTriggersArray = Array(this.visiblePagesCount - 1).fill(0);
 
       if (currentPage <= visiblePagesThreshold + 1) {
@@ -50,7 +58,6 @@ export default {
             return pagintationTriggersArray[0] + index;
           },
         );
-        pagintationTriggers.push(pageCount);
         return pagintationTriggers;
       }
       if (currentPage >= pageCount - visiblePagesThreshold + 1) {
@@ -76,10 +83,14 @@ export default {
 
 <style lang="scss" scoped>
 .select-number{
-  color: $white;
   display:flex;
   align-items: center;
-
+  &.light{
+    color:$white;
+  }
+  &.dark{
+    color: #565A65;
+  }
   span {
     font-size: 25px;
     font-weight: 800;
@@ -93,14 +104,11 @@ export default {
     &:last-of-type{
       margin-left: 10px;
     }
-    &:hover {
-      color: darken($white, 30%);
-    }
   }
 
   a {
-    margin: 5px;
-    font-size: 15px;
+    margin: 2px;
+    font-size: 12px;
     transition: .3s;
     text-align: center;
     line-height: 40px;
@@ -109,7 +117,7 @@ export default {
     padding-bottom: 2px;
 
     &.active{
-      font-size: 30px;
+      font-size: 20px;
       padding-bottom: 5px;
     }
 
