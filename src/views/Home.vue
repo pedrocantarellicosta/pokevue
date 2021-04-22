@@ -42,7 +42,7 @@ export default {
   async created() {
     window.addEventListener('resize', this.handlerWindowSize);
     const pokemonId = await parseInt(localStorage.getItem('pokemon-id'), 10);
-    if (pokemonId) this.selectedNumber = pokemonId;
+    if (pokemonId >= 1 && pokemonId <= 150) this.selectedNumber = pokemonId;
     this.updatePage();
   },
   unmounted() {
