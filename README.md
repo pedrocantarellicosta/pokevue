@@ -7,7 +7,9 @@ It's an application developed with [VueJs](https://vuejs.org/) and use API data 
 
 - Homepage
 - 404 page
-
+- 
+### Live Vercel
+[Pokevue](https://pokevue-dun.vercel.app/)
 
 ## Main Technologies
 
@@ -37,9 +39,6 @@ This project was mainly developed using the following technologies
 <div>
  <img alt="404 page"  src="https://i.imgur.com/4L8wXND.png" width="300px" />
 </div>
-
-### Live Vercel
-[Pokevue](https://pokevue-dun.vercel.app/)
 
 ## Project setup
 ```
