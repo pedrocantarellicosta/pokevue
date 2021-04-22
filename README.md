@@ -1,4 +1,4 @@
-#PokeVue
+# PokeVue
 <img src="https://img.icons8.com/color/452/pokeball-2.png" width="50">
 
 It's an application developed with [VueJs](https://vuejs.org/) and use API data from [REST Pokemon API](https://pokeapi.co/api/v2)
