@@ -2,6 +2,7 @@
   <div class="home">
     <pokemon-desktop v-if="windowSize > 740 && pokemonData" :pokemon="pokemonData" />
     <pokemon-mobile v-if="windowSize <= 740 && pokemonData" :pokemon="pokemonData" />
+
     <div class="home__paginate" :class="windowSize > 740 ? 'bottom' : 'top'">
       <select-number
         :current-page="selectedNumber"
@@ -52,6 +53,7 @@ export default {
     handlerWindowSize() {
       this.windowSize = window.innerWidth;
     },
+
     changeSelectedNumber(page) {
       switch (page) {
         case 'next':
@@ -64,24 +66,23 @@ export default {
           this.selectedNumber = page;
       }
     },
+
     async updatePage() {
       const responsePokemon = await this.pokemonRepository.getById(this.selectedNumber);
       this.pokemonData = responsePokemon.data;
       const responsePokemonSpecies = await this.pokemonSpeciesRepository.get(this.pokemonData.id);
-      // console.log(responsePokemonSpecies.data.flavor_text_entries);
       const flavorText = responsePokemonSpecies.data.flavor_text_entries.find((species) => {
         return species.language.name === 'en' && species.version.name === 'red';
       });
+
       if (flavorText) {
         this.pokemonData = {
           ...this.pokemonData,
           flavor_text: flavorText.flavor_text,
         };
       }
-      console.log(this.pokemonData);
     },
   },
-
 };
 </script>
 
@@ -90,16 +91,18 @@ export default {
   display:flex;
   height: 100%;
   min-height: 100vh;
+
   &__paginate{
     position: fixed;
     display:flex;
     justify-content: center;
     width:100%;
 
-    &.top{
+    &.top {
       top:0px;
     }
-    &.bottom{
+
+    &.bottom {
       bottom:20px;
     }
   }

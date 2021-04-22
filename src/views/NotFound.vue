@@ -21,8 +21,6 @@ export default {
     return {
     };
   },
-  components: {
-  },
 };
 </script>
 
@@ -34,12 +32,14 @@ export default {
   display:flex;
   justify-content: center;
   align-items: center;
-  &__404{
+
+  &__404 {
     font-size:200px;
     color: #cccccc;
     text-align: center;
   }
-  &__container{
+
+  &__container {
     display:flex;
     justify-content: center;
     align-items: center;
@@ -56,19 +56,19 @@ export default {
     }
   }
 
-  &__title{
+  &__title {
     font-size: 50px;
     font-weight: bold;
     line-height: 90px;
   }
-  &__description{
+  &__description {
     font-size: 25px;
     font-weight: bold;
     line-height: 50px;
     color: #cccccc;
     text-align: center;
   }
-  &__button{
+  &__button {
     background: #FF3D00;
     font-size: 25px;
     font-weight: bold;
@@ -80,12 +80,12 @@ export default {
     margin-top: 20px;
     transition: .3s;
 
-    &:hover{
+    &:hover {
       background: lighten(#FF3D00, 10%);
     }
   }
 
-  @media(max-width:1000px){
+  @media(max-width:1000px) {
     &__404{
       font-size:100px;
       text-align: center;
@@ -98,41 +98,46 @@ export default {
       font-size: 30px;
       line-height: 50px;
     }
-    &__description{
+    &__description {
       font-size: 20px;
       line-height: 50px;
       color: #cccccc;
     }
-    &__button{
+    &__button {
       font-size: 20px;
       line-height: 50px;
     }
 
   }
 
-  @media(max-width:600px){
-     &__container{
+  @media(max-width:600px) {
+    &__container{
       width:95%;
       height:95%;
-     }
-    &__404{
+    }
+
+    &__404 {
       font-size:65px;
       text-align: center;
     }
-    img{
+
+    img {
        width:70px;
        margin-right:20px;
     }
-    &__title{
+
+    &__title {
       font-size: 20px;
       line-height: 90px;
     }
-    &__description{
+
+    &__description {
       font-size: 16px;
       line-height: 50px;
       color: #cccccc;
     }
-    &__button{
+
+    &__button {
       font-size: 16px;
       line-height: 50px;
     }

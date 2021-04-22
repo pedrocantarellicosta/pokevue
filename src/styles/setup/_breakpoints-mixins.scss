@@ -4,6 +4,3 @@
 @mixin for-tablet {
   @media (min-width: #{$mobile-width +1px}) and (max-width: #{$desktop-width - 1px}) { @content; }
 }
-@mixin for-desktop {
-  @media (min-width: $desktop-width) { @content; }
-}

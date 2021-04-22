@@ -39,10 +39,6 @@ export default {
 
     },
   },
-  components: {
-  },
-  created() {
-  },
   computed: {
     paginationTriggers() {
       const { currentPage } = this;
@@ -54,7 +50,7 @@ export default {
       if (currentPage <= visiblePagesThreshold + 1) {
         pagintationTriggersArray[0] = 1;
         const pagintationTriggers = pagintationTriggersArray.map(
-          (paginationTrigger, index) => {
+          (_, index) => {
             return pagintationTriggersArray[0] + index;
           },
         );
@@ -62,7 +58,7 @@ export default {
       }
       if (currentPage >= pageCount - visiblePagesThreshold + 1) {
         const pagintationTriggers = pagintationTriggersArray.map(
-          (paginationTrigger, index) => {
+          (_, index) => {
             return pageCount - index;
           },
         );
@@ -71,7 +67,7 @@ export default {
       }
       pagintationTriggersArray[0] = currentPage - visiblePagesThreshold + 1;
       const pagintationTriggers = pagintationTriggersArray.map(
-        (paginationTrigger, index) => {
+        (_, index) => {
           return pagintationTriggersArray[0] + index;
         },
       );

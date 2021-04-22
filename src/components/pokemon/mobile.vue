@@ -1,12 +1,12 @@
 <template>
-  <div class="pokemon" :class="`background__radial-${pokemon.types[0].type.name}`">
-    <div class="pokemon__header">
-      <div class="pokemon__picture">
+  <div class="pokemon" :class="`background__radial-${pokemon.types[0].type.name}`" >
+    <div class="pokemon__header" >
+      <div class="pokemon__picture" >
         <img :src="pokemon.sprites.other['official-artwork'].front_default" :alt="`Foto do pokemon ${pokemon.name}`" />
       </div>
 
       <div class="pokemon__about">
-        <p class="pokemon__id" v-html="'#' + numberFormat(pokemon.id)"/>
+        <p class="pokemon__id" v-html="'#' + numberFormat(pokemon.id)" />
         <p class="pokemon__name" v-html="pokemon.name"/>
         <div class="pokemon__types">
           <div class="pokemon__type"
@@ -25,11 +25,11 @@
     <div class="pokemon__data">
       <h2> Bio </h2>
       <div class="pokemon__data-status">
-        <p v-if="pokemon.flavor_text">{{getFlavorText}}</p>
+        <p v-if="pokemon.flavor_text"> {{getFlavorText}} </p>
       </div>
       <div class="pokemon__body">
-        <p><strong>Weight</strong>{{pokemon.weight/10}}kg</p>
-        <p><strong>Height</strong>{{pokemon.height/10}}m</p>
+        <p><strong>Weight</strong> {{pokemon.weight/10}} kg</p>
+        <p><strong>Height</strong> {{pokemon.height/10}} m</p>
       </div>
       <h2> Base Stats </h2>
       <div class="pokemon__data-status">
@@ -55,10 +55,6 @@ export default {
   components: {
     CardStatus,
   },
-  data() {
-    return {
-    };
-  },
   methods: {
     numberFormat,
     getStatusName(status) {
@@ -82,14 +78,11 @@ export default {
           value: data.base_stat,
         };
       });
-
       return list;
     },
     getFlavorText() {
       return this.pokemon.flavor_text.replace(/[^\x20-\x7E]/g, '');
     },
-  },
-  created() {
   },
 };
 </script>
@@ -97,22 +90,25 @@ export default {
 <style lang="scss" scoped>
 @import '@/styles/background-color.scss';
 
-.pokemon{
+.pokemon {
   width:100%;
   height: 100%;
   min-height: 100vh;
-  &__header{
+
+  &__header {
     display:flex;
     padding: 20px;
     height: 40vh;
   }
-  &__about{
+
+  &__about {
     display:flex;
     flex-direction: column;
     justify-content: center;
     flex: 1;
     margin-left: 10px;
   }
+
   &__id {
     color: $very-light-gray;
     font-size: 14px;
@@ -121,16 +117,18 @@ export default {
       line-height: 30px;
     }
   }
+
   &__name {
     color: $very-light-gray;
     font-size: 16px;
     line-height: 25px;
     text-transform: capitalize;
-   @include for-tablet {
-    font-size: 20px;
+    @include for-tablet {
+      font-size: 20px;
       line-height: 35px;
     }
   }
+
   &__picture {
     width:50%;
     display:flex;
@@ -155,12 +153,13 @@ export default {
     padding: 2px;
     margin-right: 10px;
     border-radius: 2px;
-    img{
+    img {
       width: 25px;
       -webkit-filter: drop-shadow(5px 5px 5px #222);
       filter: drop-shadow(1px 1px 0px #222);
     }
-    span{
+
+    span {
       font-size: 12px;
       font-weight: 800;
       display:flex;
@@ -179,7 +178,8 @@ export default {
     color: $white;
     border-top:1px solid rgba(255, 255, 255, 0.57);
     border-radius: 20px 20px 0 0;
-    &-status{
+
+    &-status {
       margin: 20px 0;
       display:flex;
       justify-content: center;
@@ -187,7 +187,7 @@ export default {
     }
   }
 
-  &__body{
+  &__body {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
@@ -197,7 +197,6 @@ export default {
       align-items: center;
       flex-direction: column;
     }
-
   }
 }
 </style>

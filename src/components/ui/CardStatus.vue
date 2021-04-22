@@ -4,6 +4,7 @@
     <span class="card__value" v-html="value" />
   </div>
 </template>
+
 <script>
 export default {
   name: 'card-status',
@@ -17,7 +18,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.card{
+.card {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,7 +28,8 @@ export default {
   background: $very-light-gray;
   box-shadow: 0 3px 2px 1px rgba(0, 0, 0, 0.2);
   flex-direction: column;
-  &__name{
+
+  &__name {
     width:55px;
     height:30px;
     background: red;
@@ -36,6 +38,7 @@ export default {
     border-radius: 5px 5px 0 0;
     font-size:12px;
     font-weight: bold;
+
     &.hp {background: $hp;}
     &.atk {background: $attack;}
     &.def {background: $defense;}
@@ -44,7 +47,7 @@ export default {
     &.spd {background: $speed;}
   }
 
-  &__value{
+  &__value {
     display: flex;
     justify-content: center;
     align-items: center;

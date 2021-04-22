@@ -6,7 +6,6 @@
 }
 
 body {
-  // background-color: var(--background-color);
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.2s;
 }
@@ -23,7 +22,6 @@ button, a {
 
 input, select{
   border: none;
-  // background: var(--elements-background);
 }
 
 input[type=search]::-ms-clear,

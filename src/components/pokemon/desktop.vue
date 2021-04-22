@@ -54,10 +54,6 @@ export default {
   components: {
     CardStatus,
   },
-  data() {
-    return {
-    };
-  },
   methods: {
     numberFormat,
     getStatusName(status) {
@@ -71,8 +67,6 @@ export default {
       }
       return '';
     },
-  },
-  created() {
   },
   computed: {
     getPokemonStats() {
@@ -96,7 +90,7 @@ export default {
 <style lang="scss" scoped>
 @import '@/styles/background-color.scss';
 
-.pokemon{
+.pokemon {
   width:100%;
   padding: 20px;
   display:flex;
@@ -149,7 +143,8 @@ export default {
     margin-right: 10px;
     background: $very-light-gray;
     box-shadow: 0 3px 2px 1px rgba(0, 0, 0, 0.2);
-    img{
+
+    img {
       padding-right: 10px;
       width: 40px;
       margin-right: 15px;
@@ -157,14 +152,15 @@ export default {
       -webkit-filter: drop-shadow(5px 5px 5px #222);
       filter: drop-shadow(1px 1px 0px #222);
     }
-    span{
+
+    span {
       font-size: 16px;
       font-weight: 800;
       display:flex;
       justify-content: center;
     }
   }
-&__data {
+  &__data {
     display:flex;
     justify-content: center;
     padding: 40px 20px;
@@ -172,6 +168,7 @@ export default {
     color: $white;
     border-radius: 20px 20px 0 0;
     width:40%;
+
     &-status{
       margin: 20px 0;
       display:flex;
@@ -184,13 +181,13 @@ export default {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+
     p {
       margin-right: 20px;
       display: flex;
       align-items: center;
       flex-direction: column;
     }
-
   }
   h1 {
     color:$very-light-gray;
