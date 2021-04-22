@@ -41,8 +41,8 @@ export default {
   },
   async created() {
     window.addEventListener('resize', this.handlerWindowSize);
-    const pokemonId = await localStorage.getItem('pokemon-id');
-    if (pokemonId) this.selectedNumber = pokemonId;
+    const pokemonId = await parseInt(localStorage.getItem('pokemon-id'), 10);
+    if (pokemonId >= 1 && pokemonId <= 150) this.selectedNumber = pokemonId;
     this.updatePage();
   },
   unmounted() {
@@ -57,12 +57,18 @@ export default {
     },
 
     changeSelectedNumber(page) {
+      let number = 0;
       switch (page) {
         case 'next':
-          this.selectedNumber += this.selectedNumber !== 150 ? 1 : 0;
+          if (this.selectedNumber !== 150) number = 1;
+          console.log(number);
+          console.log(this.selectedNumber);
+          this.selectedNumber += number;
+          console.log(this.selectedNumber);
           break;
         case 'previous':
-          this.selectedNumber -= this.selectedNumber !== 1 ? 1 : 0;
+          if (this.selectedNumber !== 1) number = 1;
+          this.selectedNumber -= number;
           break;
         default:
           this.selectedNumber = page;
