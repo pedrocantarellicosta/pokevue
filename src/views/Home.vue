@@ -61,10 +61,7 @@ export default {
       switch (page) {
         case 'next':
           if (this.selectedNumber !== 150) number = 1;
-          console.log(number);
-          console.log(this.selectedNumber);
           this.selectedNumber += number;
-          console.log(this.selectedNumber);
           break;
         case 'previous':
           if (this.selectedNumber !== 1) number = 1;
@@ -73,7 +70,6 @@ export default {
         default:
           this.selectedNumber = page;
       }
-      console.log(this.selectedNumber);
       localStorage.setItem('pokemon-id', this.selectedNumber);
     },
 
