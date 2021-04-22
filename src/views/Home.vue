@@ -59,7 +59,7 @@ export default {
     changeSelectedNumber(page) {
       switch (page) {
         case 'next':
-          this.selectedNumber += this.selectedNumber !== 1 ? 1 : 0;
+          this.selectedNumber += this.selectedNumber !== 150 ? 1 : 0;
           break;
         case 'previous':
           this.selectedNumber -= this.selectedNumber !== 1 ? 1 : 0;
